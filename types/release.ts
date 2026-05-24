@@ -11,6 +11,11 @@ export type Release = {
   lede: string;
   story: string;
   landrUrl?: string;
+  tracks?: {
+    title: string;
+    version?: string;
+    duration?: string;
+  }[];
   details: {
     label: string;
     value: string;

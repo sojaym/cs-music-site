@@ -36,6 +36,11 @@ export function ReleaseModal({ release, onClose }: ReleaseModalProps) {
 
   if (!release) return null;
 
+  const trackListHeading =
+    release.type === "single" && release.tracks && release.tracks.length > 1
+      ? "Versions"
+      : "Track List";
+
   return (
     <div
       className="fixed inset-0 z-50 grid place-items-center p-0 sm:p-7"
@@ -72,6 +77,39 @@ export function ReleaseModal({ release, onClose }: ReleaseModalProps) {
             className="aspect-square w-full rounded-lg object-cover"
             priority
           />
+
+          {release.tracks && release.tracks.length > 0 ? (
+            <section className="mt-5 rounded-lg border border-line bg-black/25 p-4">
+              <h3 className="mb-3 text-xs font-extrabold uppercase text-magenta">
+                {trackListHeading}
+              </h3>
+              <ol className="grid gap-3">
+                {release.tracks.map((track, index) => (
+                  <li
+                    key={`${track.title}-${track.version ?? index}`}
+                    className="grid grid-cols-[1.5rem_1fr_auto] gap-3 text-sm"
+                  >
+                    <span className="font-extrabold text-quiet">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span className="min-w-0">
+                      <span className="block truncate font-extrabold text-soft">
+                        {track.title}
+                      </span>
+                      {track.version ? (
+                        <span className="block truncate text-muted">
+                          {track.version}
+                        </span>
+                      ) : null}
+                    </span>
+                    {track.duration ? (
+                      <span className="text-quiet">{track.duration}</span>
+                    ) : null}
+                  </li>
+                ))}
+              </ol>
+            </section>
+          ) : null}
         </div>
 
         <div className="pt-6 md:pr-12 md:pt-0">

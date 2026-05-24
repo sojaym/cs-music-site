@@ -14,6 +14,11 @@ export const releases: Release[] = [
     story:
       "Built as a public confession shared through movement, Dance With You brings together soulful rhythm, club energy, and a direct emotional hook.",
     landrUrl: "https://artists.landr.com/055120728266",
+    tracks: [
+      { title: "Dance With You", version: "Original Mix" },
+      { title: "Dance With You", version: "Radio Edit" },
+      { title: "Dance With You", version: "Extended Mix" },
+    ],
     details: [
       { label: "Format", value: "Single" },
       { label: "Mood", value: "Dance, sensual, uplifting" },
@@ -95,10 +100,15 @@ export const releases: Release[] = [
     artist: "ClearSocial",
     type: "ep",
     year: "2026",
-    image: "/images/hero-logo-atmosphere.jpg",
+    image: "/images/coming-soon.jpg",
     lede: "A collected first chapter for the ClearSocial sound and visual language.",
     story:
       "A compact release that gathers the early identity: spoken feeling, club atmosphere, and collaborative electronic production.",
+    tracks: [
+      { title: "Track title to be confirmed" },
+      { title: "Track title to be confirmed" },
+      { title: "Track title to be confirmed" },
+    ],
     details: [
       { label: "Format", value: "EP" },
       { label: "Mood", value: "Atmospheric, collective, electronic" },
